@@ -1,0 +1,716 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* #bg-image{
+    background-image: url("./assets/weatherBackImages/partly-cloudy-night");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.weather-report-card{
+    display: flex;
+    padding: 30px;
+    justify-content: center;   
+}
+
+.search-section{
+
+    background-color: #d2d3d6;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
+    
+}
+
+.report-section{
+  
+    width: 100%;
+    padding: 20px 10px;
+    background-color: #f6f6f8;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.searchBox{
+    display: flex;
+}
+
+.search-section input{
+    height: 30px;
+    margin: 30px 0px 0px 10px;
+    border-width: 0px;
+    border-radius: 5px 0px 0px 5px;
+    
+}
+
+.search-section button{
+    height: 30px;
+    width: 30px;
+    margin: 30px 0px 0px 0px;
+    border-width: 0px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #5399ed;
+    
+}
+
+.time-week ul{
+    display: flex;
+    gap: 20px;
+}
+
+.time-week li{
+    list-style: none;
+}
+
+.time-week li + span{
+    margin-left: 300px;
+}
+
+.grid-style{
+
+display: grid;
+row-gap: 20px;
+column-gap: 10px;
+grid-template-columns: repeat(5, 0fr);
+margin: 20px;
+}
+
+.grid-style section{
+    height: 100px;
+    width: 80px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    border: 1px solid red;
+
+}
+
+.today-highlights{
+
+    display: grid;
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-columns: repeat(2, 0fr);
+    margin: 20px;
+}
+
+.today-highlights section{
+    height: 100px;
+    width: 180px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    border: 1px solid red;
+} */
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+
+    #bg-image {
+        background-image: url("./assets/weatherBackImages/partly-cloudy-night");
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .weather-report-card {
+        display: flex;
+        padding: 40px 20px;
+        justify-content: center;
+    }
+
+    .search-section {
+        /* width: 350px; */
+        background-color: #d2d3d6;
+        padding: 20px;
+        opacity: 90%;
+        border-radius: 10px 0px 0px 10px;
+
+    }
+
+    .report-section {
+
+        /* width: 100%; */
+        padding: 20px 10px;
+        background-color: #f6f6f8;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .searchBox {
+        display: flex;
+    }
+
+    .search-section input {
+        height: 30px;
+        margin: 30px 0px 0px 10px;
+        border-width: 0px;
+        border-radius: 5px 0px 0px 5px;
+
+    }
+
+    .search-section button {
+        height: 30px;
+        width: 30px;
+        margin: 30px 0px 0px 0px;
+        border-width: 0px;
+        border-radius: 0px 5px 5px 0px;
+        background-color: #5399ed;
+        cursor: pointer;
+
+    }
+
+    .time-week ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    .time-week li {
+        list-style: none;
+    }
+
+    .time-week li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .time-week li+button {
+        margin-left: 650px;
+    }
+
+    .time-week button{
+        /* color: white; */
+        border-width: 0px;
+        border-radius: 50px;
+        padding: 4px;
+    }
+
+    .time-week button:hover {
+       background-color: black;
+       color: white;
+       border-width: 0px;
+       border-radius: 50px;
+    }
+
+    .grid-style {
+
+        display: grid;
+        row-gap: 30px;
+        column-gap: 30px;
+        grid-template-columns: repeat(5, 0fr);
+        margin: 20px;
+    }
+
+    .grid-style section {
+        height: 120px;
+        width: 140px;
+        border-radius: 15px;
+        padding: 10px;
+        text-align: center;
+        background-color: #ffffff;
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .today-highlights {
+
+        display: grid;
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: repeat(3, 0fr);
+        margin: 20px;
+    }
+
+    .today-highlights section {
+        height: 130px;
+        width: 180px;
+        border-radius: 15px;
+        background-color: #ffffff;
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1024px to 1280px
+  */
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+
+
+    #bg-image {
+        background-image: url("./assets/weatherBackImages/clear-day");
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .weather-report-card {
+        display: flex;
+        padding: 30px;
+        justify-content: center;
+    }
+
+    .search-section {
+        /* width: 350px; */
+        background-color: #d2d3d6;
+        padding: 20px;
+        opacity: 90%;
+        border-radius: 10px 0px 0px 10px;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+
+    }
+
+    .report-section {
+
+        width: 100%;
+        padding: 20px 10px;
+        background-color: #f6f6f8;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .searchBox {
+        display: flex;
+    }
+
+    .search-section input {
+        height: 30px;
+        margin: 30px 0px 0px 10px;
+        border-width: 0px;
+        border-radius: 5px 0px 0px 5px;
+
+    }
+
+    .search-section button {
+        height: 30px;
+        width: 30px;
+        margin: 30px 0px 0px 0px;
+        border-width: 0px;
+        border-radius: 0px 5px 5px 0px;
+        background-color: #5399ed;
+        cursor: pointer;
+    }
+
+    .weather-icon{
+        display: flex;
+        justify-content: center;
+    }
+
+    .weather-icon img{
+        height: 150px;
+        width: 150px;
+    }
+
+    .temp-date{
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+    }
+
+    .temparture p{
+        font-size: xx-large;
+        
+    }
+
+    .day-time p{
+        font-size: large;     
+    }
+
+    .line{
+        height: 2px;
+        width: 100%;
+        background-color: white;
+    }
+
+    .cloud{
+        display: flex;
+        gap: 15px;
+    }
+
+    .precp{
+        display: flex;
+        gap: 23px;
+    }
+
+    .locationindex{
+        display: flex;
+        gap: 23px;
+        margin-top: 700px;
+    }
+
+    .locationweek{
+        display: flex;
+        gap: 23px;
+        margin-top: 280px;
+    }
+
+    .time-week ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    .time-week li {
+        list-style: none;
+    }
+
+    .time-week li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .time-week li+button {
+        margin-left: 500px;
+    }
+
+    .time-week button{
+        /* color: white; */
+        border-width: 0px;
+        border-radius: 50px;
+        padding: 4px;
+    }
+
+    .time-week button:hover {
+        background-color: black;
+        color: white;
+        border-width: 0px;
+        border-radius: 50px;
+     }
+
+    .grid-style {
+
+        display: grid;
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: repeat(5, 0fr);
+        margin: 20px;
+    }
+
+    .grid-style section {
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 15px;
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .grid-style section img{
+        height: 60px;
+        width: 60px;
+        margin: 8px;
+    }
+
+    .today-highlights {
+
+        display: grid;
+        row-gap: 30px;
+        column-gap: 30px;
+        grid-template-columns: repeat(3, 0fr);
+        margin: 20px;
+    }
+
+    .today-highlights section {
+        height: 100px;
+        width: 180px;
+        border-radius: 15px;
+        padding: 10px;
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .sectionheading{
+        color: grey;
+        opacity: 60%;
+    }
+
+    .sectionpara{
+        text-align: center;
+        font-size: x-large;
+        margin: 15px;
+    }
+
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1023px
+  */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+
+    #bg-image {
+        background-image: url("./assets/weatherBackImages/partly-cloudy-night");
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .weather-report-card {
+        display: flex;
+        padding: 30px;
+        justify-content: center;
+    }
+
+    .search-section {
+        /* width: 350px; */
+        background-color: #d2d3d6;
+        padding: 10px;
+        opacity: 90%;
+        border-radius: 10px 0px 0px 10px;
+
+    }
+
+    .report-section {
+
+        width: 100%;
+        padding: 20px 10px;
+        background-color: #f6f6f8;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .searchBox {
+        display: flex;
+    }
+
+    .search-section input {
+        height: 30px;
+        margin: 30px 0px 0px 10px;
+        border-width: 0px;
+        border-radius: 5px 0px 0px 5px;
+
+    }
+
+    .search-section button {
+        height: 30px;
+        width: 30px;
+        margin: 30px 0px 0px 0px;
+        border-width: 0px;
+        border-radius: 0px 5px 5px 0px;
+        background-color: #5399ed;
+        cursor: pointer;
+
+    }
+
+    .time-week ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    .time-week li {
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .time-week li a {
+
+        text-decoration: none;
+        color: black;
+
+    }
+
+    .time-week li a:active {
+
+        text-decoration: none;
+        color: #5399ed;
+    }
+
+    .time-week li+button {
+        margin-left: 300px;
+    }
+
+    .time-week button{
+        /* color: white; */
+        border-width: 0px;
+        border-radius: 50px;
+        padding: 4px;
+    }
+
+    .time-week button:hover {
+        background-color: black;
+        color: white;
+        border-width: 0px;
+        border-radius: 50px;
+     }
+
+    .grid-style {
+
+        display: grid;
+        row-gap: 10px;
+        column-gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 20px;
+    }
+
+    .grid-style section {
+        height: 100px;
+        width: 80px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 15px;
+        background-color: #ffffff;
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .today-highlights {
+
+        display: grid;
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: repeat(2, 0fr);
+        margin: 20px;
+    }
+
+    .today-highlights section {
+        height: 100px;
+        width: 180px;
+        border-radius: 15px;
+        background-color: #ffffff;
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+
+    #bg-image {
+        background-image: url("./assets/weatherBackImages/partly-cloudy-night");
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 10px;
+    }
+
+    .weather-report-card {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        align-items: center;
+    }
+
+    .search-section {
+        /* width: 350px; */
+        width: 100%;
+        background-color: #d2d3d6;
+        padding: 10px;
+        opacity: 90%;
+        border-radius: 10px 10px 0px 0px;
+
+    }
+
+    .report-section {
+
+        width: 100%;
+        padding: 20px 10px;
+        background-color: #f6f6f8;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .searchBox {
+        display: flex;
+    }
+
+    .search-section input {
+        height: 30px;
+        margin: 30px 0px 0px 10px;
+        border-width: 0px;
+        border-radius: 5px 0px 0px 5px;
+
+    }
+
+    .search-section button {
+        height: 30px;
+        width: 30px;
+        margin: 30px 0px 0px 0px;
+        border-width: 0px;
+        border-radius: 0px 5px 5px 0px;
+        background-color: #5399ed;
+        cursor: pointer;
+
+    }
+
+    .time-week ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    .time-week li {
+        list-style: none;
+    }
+
+    .time-week li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .time-week li+button {
+        margin-left: 150px;
+    }
+
+    .time-week button{
+        /* color: white; */
+        border-width: 0px;
+        border-radius: 50px;
+        padding: 4px;
+    }
+
+    .time-week button:hover {
+        background-color: black;
+        color: white;
+        border-width: 0px;
+        border-radius: 50px;
+     }
+
+    .grid-style {
+
+        display: grid;
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 20px;
+    }
+
+    .grid-style section {
+        height: 100px;
+        width: 70px;
+        border-radius: 15px;
+        padding: 10px;
+        text-align: center;
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .today-highlights {
+
+        display: grid;
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px;
+    }
+
+    .today-highlights section {
+        height: 100px;
+        width: 120px;
+        border-radius: 15px;
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+}
