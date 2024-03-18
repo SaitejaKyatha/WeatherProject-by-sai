@@ -9,7 +9,6 @@ function updateTime() {
     let seconds = today.getSeconds();
     hours = (hours < 10 ? '0' : '') + hours;
     minutes = (minutes < 10 ? '0' : '') + minutes;
-    seconds = (seconds < 10 ? '0' : '') + seconds;
     let timeString = hours + ':' + minutes;
     document.getElementById("day-time").textContent = `${todayDay} ${timeString}`
 }
@@ -25,7 +24,6 @@ function weatherReport() {
         }).then((jsonData) => {
             console.log(jsonData);
             let data = jsonData.days[0]
-            document.getElementById("temperature").textContent = `${data.temp}°C`
             document.getElementById("location").textContent = `${jsonData.resolvedAddress}`
             document.getElementById("cloud").textContent = `${data.conditions}`
             document.getElementById("precp").textContent = `Perc - ${jsonData.days[0].precip}%`
@@ -40,7 +38,9 @@ function weatherReport() {
             visibilityCheck(data.visibility)
             document.getElementById("airquality").textContent = `${data.severerisk}`
             airqualityCheck(data.severerisk)
-            backgrouundImage(data.icon)
+            backgrouundImage(jsonData.currentConditions.icon)
+            sideIcon(jsonData.currentConditions.icon)
+            document.getElementById("temperature").textContent = `${jsonData.currentConditions.temp}°C`
             document.getElementById("zero").textContent = `${data.hours[0].temp}°C`
             document.getElementById("one").textContent = `${data.hours[1].temp}°C`
             document.getElementById("two").textContent = `${data.hours[2].temp}°C`
@@ -65,8 +65,241 @@ function weatherReport() {
             document.getElementById("twentyone").textContent = `${data.hours[21].temp}°C`
             document.getElementById("twentytwo").textContent = `${data.hours[22].temp}°C`
             document.getElementById("twentythree").textContent = `${data.hours[23].temp}°C`
-            sideIcon(data.icon)
 
+            // Data for celsius
+            function toCelsius(data) {
+                document.getElementById("temperature").textContent = `${jsonData.currentConditions.temp}°C`
+                document.getElementById("zero").textContent = `${data.hours[0].temp}°C`
+                document.getElementById("one").textContent = `${data.hours[1].temp}°C`
+                document.getElementById("two").textContent = `${data.hours[2].temp}°C`
+                document.getElementById("three").textContent = `${data.hours[3].temp}°C`
+                document.getElementById("four").textContent = `${data.hours[4].temp}°C`
+                document.getElementById("five").textContent = `${data.hours[5].temp}°C`
+                document.getElementById("six").textContent = `${data.hours[6].temp}°C`
+                document.getElementById("seven").textContent = `${data.hours[7].temp}°C`
+                document.getElementById("eight").textContent = `${data.hours[8].temp}°C`
+                document.getElementById("nine").textContent = `${data.hours[9].temp}°C`
+                document.getElementById("ten").textContent = `${data.hours[10].temp}°C`
+                document.getElementById("elevan").textContent = `${data.hours[11].temp}°C`
+                document.getElementById("twelve").textContent = `${data.hours[12].temp}°C`
+                document.getElementById("thirteen").textContent = `${data.hours[13].temp}°C`
+                document.getElementById("fourteen").textContent = `${data.hours[14].temp}°C`
+                document.getElementById("fifteen").textContent = `${data.hours[15].temp}°C`
+                document.getElementById("sixteen").textContent = `${data.hours[16].temp}°C`
+                document.getElementById("seventeen").textContent = `${data.hours[17].temp}°C`
+                document.getElementById("eighteen").textContent = `${data.hours[18].temp}°C`
+                document.getElementById("ninteen").textContent = `${data.hours[19].temp}°C`
+                document.getElementById("twenty").textContent = `${data.hours[20].temp}°C`
+                document.getElementById("twentyone").textContent = `${data.hours[21].temp}°C`
+                document.getElementById("twentytwo").textContent = `${data.hours[22].temp}°C`
+                document.getElementById("twentythree").textContent = `${data.hours[23].temp}°C`
+            }
+            // Data for farenheat
+            function toFarnheat(data) {
+                document.getElementById("temperature").textContent = `${((jsonData.currentConditions.temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("zero").textContent = `${((data.hours[0].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("one").textContent = `${((data.hours[1].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("two").textContent = `${((data.hours[2].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("three").textContent = `${((data.hours[3].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("four").textContent = `${((data.hours[4].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("five").textContent = `${((data.hours[5].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("six").textContent = `${((data.hours[6].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("seven").textContent = `${((data.hours[7].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("eight").textContent = `${((data.hours[8].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("nine").textContent = `${((data.hours[9].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("ten").textContent = `${((data.hours[10].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("elevan").textContent = `${((data.hours[11].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("twelve").textContent = `${((data.hours[12].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("thirteen").textContent = `${((data.hours[13].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("fourteen").textContent = `${((data.hours[14].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("fifteen").textContent = `${((data.hours[15].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("sixteen").textContent = `${((data.hours[16].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("seventeen").textContent = `${((data.hours[17].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("eighteen").textContent = `${((data.hours[18].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("ninteen").textContent = `${((data.hours[19].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("twenty").textContent = `${((data.hours[20].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("twentyone").textContent = `${((data.hours[21].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("twentytwo").textContent = `${((data.hours[22].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                document.getElementById("twentythree").textContent = `${((data.hours[23].temp * (9 / 5)) + 30).toFixed(1)}°F`
+            }
+
+            // To change celsius
+            document.getElementById("celsius").addEventListener("click", function () {
+                toCelsius(data);
+                this.classList.toggle('active');
+                document.getElementById("farenheat").classList.remove('active')
+            })
+            // To change farenheat
+            document.getElementById("farenheat").addEventListener("click", function () {
+                toFarnheat(data);
+                this.classList.toggle('active')
+                document.getElementById("celsius").classList.remove('active')
+            })
+            // To get today related information
+            document.getElementById("todaydata").addEventListener("click", function () {
+                this.classList.toggle('activetw')
+                document.getElementById("weekdata").classList.remove('activetw')
+
+                // document.getElementById("zero").textContent = `${data.hours[0].temp}°C`
+                // document.getElementById("one").textContent = `${data.hours[1].temp}°C`
+                // document.getElementById("two").textContent = `${data.hours[2].temp}°C`
+                // document.getElementById("three").textContent = `${data.hours[3].temp}°C`
+
+
+
+            })
+
+            // To get week related information
+            document.getElementById("weekdata").addEventListener("click", function () {
+                this.classList.toggle('activetw');
+                document.getElementById("todaydata").classList.remove('activetw')
+                console.log("weekhello");
+
+            })
+
+            document.getElementById("weekdata").addEventListener("click", function () {
+
+                document.getElementById("gridstyle").innerHTML =
+                    `
+                    <section>
+                    <h6>Monday</h6>
+                    <img src=".." alt="img" id="oneimage">
+                    <p id="onetemp>${jsonData.days[0].temp}°C</p>
+                    </section>
+        
+                    <section>
+                    <h6>Tuesday</h6>
+                    <img src=".." alt="img" id="twoimage">
+                    <p id="twotemp>${jsonData.days[1].temp}°C</p>
+                    </section>
+        
+                    <section>
+                    <h6>Wednesday</h6>
+                    <img src="" alt="img" id="threeimage">
+                    <p>${jsonData.days[2].temp}°C</p>
+                    </section>
+        
+                    <section>
+                    <h6>Thursday</h6>
+                    <img src="./assets/weatherIcons/clear-day" alt="img" id="fourimage">
+                    <p>${jsonData.days[3].temp}°C</p>
+                    </section>
+        
+                    <section>
+                    <h6>Friday</h6>
+                    <img src="./assets/weatherIcons/clear-day" alt="img" id="fiveimage">
+                    <p>${jsonData.days[4].temp}°C</p>
+                    </section>
+        
+                    <section>
+                    <h6>Saturday</h6>
+                    <img src="./assets/weatherIcons/clear-day" alt="img" id="siximage">
+                    <p>${jsonData.days[5].temp}°C</p>
+                    </section>
+        
+                    <section>
+                    <h6>Sunday</h6>
+                    <img src="./assets/weatherIcons/clear-day" alt="img" id="sevenimage">
+                    <p>${jsonData.days[6].temp}°C</p>
+                    </section>
+                    `
+
+                let weeksrc = ["https://i.ibb.co/PZQXH8V/27.png", "https://i.ibb.co/kBd2NTS/39.png", "https://i.ibb.co/rb4rrJL/26.png", "https://i.ibb.co/1nxNGHL/10.png", "https://i.ibb.co/Kzkk59k/15.png"]
+
+                if (jsonData.days[0].icon === "partly-cloudy-day") {
+                    document.getElementById("oneimage").src = weeksrc[0]
+                } else if (jsonData.days[0].icon === "rain") {
+                    document.getElementById("oneimage").src = weeksrc[1]
+                } else if (jsonData.days[0].icon === "clear-day") {
+                    document.getElementById("oneimage").src = weeksrc[2]
+                } else if (jsonData.days[0].icon === "clear-night") {
+                    document.getElementById("oneimage").src = weeksrc[3]
+                } else if (jsonData.days[0].icon === "partly-cloudy-night") {
+                    document.getElementById("oneimage").src = weeksrc[4]
+                }
+
+                if (jsonData.days[1].icon === "partly-cloudy-day") {
+                    document.getElementById("twoimage").src = weeksrc[0]
+                } else if (jsonData.days[1].icon === "rain") {
+                    document.getElementById("twoimage").src = weeksrc[1]
+                } else if (jsonData.days[1].icon === "clear-day") {
+                    document.getElementById("twoimage").src = weeksrc[2]
+                } else if (jsonData.days[1].icon === "clear-night") {
+                    document.getElementById("twoimage").src = weeksrc[3]
+                } else if (jsonData.days[1].icon === "partly-cloudy-night") {
+                    document.getElementById("twoimage").src = weeksrc[4]
+                }
+
+                if (jsonData.days[2].icon === "partly-cloudy-day") {
+                    document.getElementById("threeimage").src = weeksrc[0]
+                } else if (jsonData.days[2].icon === "rain") {
+                    document.getElementById("threeimage").src = weeksrc[1]
+                } else if (jsonData.days[2].icon === "clear-day") {
+                    document.getElementById("threeimage").src = weeksrc[2]
+                } else if (jsonData.days[2].icon === "clear-night") {
+                    document.getElementById("threeimage").src = weeksrc[3]
+                } else if (jsonData.days[2].icon === "partly-cloudy-night") {
+                    document.getElementById("threeimage").src = weeksrc[4]
+                }
+
+                if (jsonData.days[3].icon === "partly-cloudy-day") {
+                    document.getElementById("fourimage").src = weeksrc[0]
+                } else if (jsonData.days[3].icon === "rain") {
+                    document.getElementById("fourimage").src = weeksrc[1]
+                } else if (jsonData.days[3].icon === "clear-day") {
+                    document.getElementById("fourimage").src = weeksrc[2]
+                } else if (jsonData.days[3].icon === "clear-night") {
+                    document.getElementById("fourimage").src = weeksrc[3]
+                } else if (jsonData.days[3].icon === "partly-cloudy-night") {
+                    document.getElementById("fourimage").src = weeksrc[4]
+                }
+
+                if (jsonData.days[4].icon === "partly-cloudy-day") {
+                    document.getElementById("fiveimage").src = weeksrc[0]
+                } else if (jsonData.days[4].icon === "rain") {
+                    document.getElementById("fiveimage").src = weeksrc[1]
+                } else if (jsonData.days[4].icon === "clear-day") {
+                    document.getElementById("fiveimage").src = weeksrc[2]
+                } else if (jsonData.days[4].icon === "clear-night") {
+                    document.getElementById("fiveimage").src = weeksrc[3]
+                } else if (jsonData.days[4].icon === "partly-cloudy-night") {
+                    document.getElementById("fiveimage").src = weeksrc[4]
+                }
+
+                if (jsonData.days[5].icon === "partly-cloudy-day") {
+                    document.getElementById("siximage").src = weeksrc[0]
+                } else if (jsonData.days[5].icon === "rain") {
+                    document.getElementById("siximage").src = weeksrc[1]
+                } else if (jsonData.days[5].icon === "clear-day") {
+                    document.getElementById("siximage").src = weeksrc[2]
+                } else if (jsonData.days[5].icon === "clear-night") {
+                    document.getElementById("siximage").src = weeksrc[3]
+                } else if (jsonData.days[5].icon === "partly-cloudy-night") {
+                    document.getElementById("siximage").src = weeksrc[4]
+                }
+
+                if (jsonData.days[6].icon === "partly-cloudy-day") {
+                    document.getElementById("sevenimage").src = weeksrc[0]
+                } else if (jsonData.days[6].icon === "rain") {
+                    document.getElementById("sevenimage").src = weeksrc[1]
+                } else if (jsonData.days[6].icon === "clear-day") {
+                    document.getElementById("sevenimage").src = weeksrc[2]
+                } else if (jsonData.days[6].icon === "clear-night") {
+                    document.getElementById("sevenimage").src = weeksrc[3]
+                } else if (jsonData.days[6].icon === "partly-cloudy-night") {
+                    document.getElementById("sevenimage").src = weeksrc[4]
+                }
+
+
+                document.getElementById("onetemp").textContent = `${((jsonData.days[0].temp * (9 / 5)) + 30).toFixed(1)}°F`
+
+            })
+
+
+
+
+
+            // Conditions for Changing hour Icons
             let imagesrc = ["https://i.ibb.co/PZQXH8V/27.png", "https://i.ibb.co/kBd2NTS/39.png", "https://i.ibb.co/rb4rrJL/26.png", "https://i.ibb.co/1nxNGHL/10.png", "https://i.ibb.co/Kzkk59k/15.png"]
 
             if (jsonData.days[0].hours[0].icon === "partly-cloudy-day") {
@@ -357,9 +590,11 @@ function weatherReport() {
                 document.getElementById("twentythreeImage").src = imagesrc[4]
             }
 
+        }).catch((error) => {
+            alert("Place not found in our Data base")
         })
-
 }
+
 
 // Function to check uv-index
 function toCheckUvindex(uvindex) {

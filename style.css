@@ -182,7 +182,7 @@ margin: 20px;
         margin-left: 650px;
     }
 
-    .time-week button{
+    .time-week button {
         /* color: white; */
         border-width: 0px;
         border-radius: 50px;
@@ -190,10 +190,10 @@ margin: 20px;
     }
 
     .time-week button:hover {
-       background-color: black;
-       color: white;
-       border-width: 0px;
-       border-radius: 50px;
+        background-color: black;
+        color: white;
+        border-width: 0px;
+        border-radius: 50px;
     }
 
     .grid-style {
@@ -298,54 +298,54 @@ margin: 20px;
         cursor: pointer;
     }
 
-    .weather-icon{
+    .weather-icon {
         display: flex;
         justify-content: center;
     }
 
-    .weather-icon img{
+    .weather-icon img {
         height: 150px;
         width: 150px;
     }
 
-    .temp-date{
+    .temp-date {
         display: flex;
         flex-direction: column;
-        align-items:flex-start;
+        align-items: flex-start;
     }
 
-    .temparture p{
+    .temparture p {
         font-size: xx-large;
-        
+
     }
 
-    .day-time p{
-        font-size: large;     
+    .day-time p {
+        font-size: large;
     }
 
-    .line{
+    .line {
         height: 2px;
         width: 100%;
         background-color: white;
     }
 
-    .cloud{
+    .cloud {
         display: flex;
         gap: 15px;
     }
 
-    .precp{
+    .precp {
         display: flex;
         gap: 23px;
     }
 
-    .locationindex{
+    .locationindex {
         display: flex;
         gap: 23px;
         margin-top: 700px;
     }
 
-    .locationweek{
+    .locationweek {
         display: flex;
         gap: 23px;
         margin-top: 280px;
@@ -356,32 +356,45 @@ margin: 20px;
         gap: 20px;
     }
 
-    .time-week li {
-        list-style: none;
-    }
-
-    .time-week li a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .time-week li+button {
+    .fcicon {
         margin-left: 500px;
     }
 
-    .time-week button{
+   
+
+    .time-week button {
         /* color: white; */
         border-width: 0px;
         border-radius: 50px;
-        padding: 4px;
+        padding: 5px;
+        cursor: pointer;
     }
 
-    .time-week button:hover {
-        background-color: black;
+    .fcicon button:hover{
         color: white;
+        background-color: black;
         border-width: 0px;
         border-radius: 50px;
-     }
+    }
+
+    .activetw{
+        color: #5399ed;
+    }
+
+    .active{
+        color: white;
+        background-color: black;
+        border-width: 0px;
+        border-radius: 50px;
+    }
+    
+
+    .fcicon button:active{
+        color: white;
+        background-color: black;
+        border-width: 0px;
+        border-radius: 50px;
+    }
 
     .grid-style {
 
@@ -396,13 +409,14 @@ margin: 20px;
         height: 100px;
         width: 100px;
         padding: 10px;
+        font-weight: bold;
         text-align: center;
         border-radius: 15px;
         background-color: #ffffff;
         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     }
 
-    .grid-style section img{
+    .grid-style section img {
         height: 60px;
         width: 60px;
         margin: 8px;
@@ -426,12 +440,12 @@ margin: 20px;
         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     }
 
-    .sectionheading{
+    .sectionheading {
         color: grey;
         opacity: 60%;
     }
 
-    .sectionpara{
+    .sectionpara {
         text-align: center;
         font-size: x-large;
         margin: 15px;
@@ -527,7 +541,7 @@ margin: 20px;
         margin-left: 300px;
     }
 
-    .time-week button{
+    .time-week button {
         /* color: white; */
         border-width: 0px;
         border-radius: 50px;
@@ -539,7 +553,7 @@ margin: 20px;
         color: white;
         border-width: 0px;
         border-radius: 50px;
-     }
+    }
 
     .grid-style {
 
@@ -663,7 +677,7 @@ margin: 20px;
         margin-left: 150px;
     }
 
-    .time-week button{
+    .time-week button {
         /* color: white; */
         border-width: 0px;
         border-radius: 50px;
@@ -675,7 +689,7 @@ margin: 20px;
         color: white;
         border-width: 0px;
         border-radius: 50px;
-     }
+    }
 
     .grid-style {
 
