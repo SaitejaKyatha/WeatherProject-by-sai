@@ -18,7 +18,7 @@ setInterval(updateTime, 1000);
 function weatherReport() {
     var city = document.getElementById("input-feild").value
     fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=EJ6UBL2JEQGYB3AA4ENASN62J&contentType=json`)
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=MBJMH7SM82F25Q47FFLZN5MHU&contentType=json`)
         .then((response) => {
             return response.json()
         }).then((jsonData) => {
@@ -139,13 +139,8 @@ function weatherReport() {
             document.getElementById("todaydata").addEventListener("click", function () {
                 this.classList.toggle('activetw')
                 document.getElementById("weekdata").classList.remove('activetw')
-
-                // document.getElementById("zero").textContent = `${data.hours[0].temp}°C`
-                // document.getElementById("one").textContent = `${data.hours[1].temp}°C`
-                // document.getElementById("two").textContent = `${data.hours[2].temp}°C`
-                // document.getElementById("three").textContent = `${data.hours[3].temp}°C`
-
-
+                document.getElementById("weekforecast").style.display = "none"
+                document.getElementById("todayforecast").style.display =""
 
             })
 
@@ -157,53 +152,82 @@ function weatherReport() {
 
             })
 
-            document.getElementById("weekdata").addEventListener("click", function () {
+            
 
-                document.getElementById("gridstyle").innerHTML =
+            document.getElementById("weekdata").addEventListener("click", function () {
+                document.getElementById("todayforecast").style.display = "none"
+                document.getElementById("weekforecast").style.display = ""
+                document.getElementById("weekforecast").innerHTML =
                     `
                     <section>
-                    <h6>Monday</h6>
-                    <img src=".." alt="img" id="oneimage">
-                    <p id="onetemp>${jsonData.days[0].temp}°C</p>
-                    </section>
-        
-                    <section>
                     <h6>Tuesday</h6>
-                    <img src=".." alt="img" id="twoimage">
-                    <p id="twotemp>${jsonData.days[1].temp}°C</p>
+                    <img src="" alt="img" id="oneimage">
+                    <p class = "onedata">${jsonData.days[0].temp}°C</p>
                     </section>
         
                     <section>
                     <h6>Wednesday</h6>
-                    <img src="" alt="img" id="threeimage">
-                    <p>${jsonData.days[2].temp}°C</p>
+                    <img src=".." alt="img" id="twoimage">
+                    <p class = "twodata">${jsonData.days[1].temp}°C</p>
                     </section>
         
                     <section>
                     <h6>Thursday</h6>
-                    <img src="./assets/weatherIcons/clear-day" alt="img" id="fourimage">
-                    <p>${jsonData.days[3].temp}°C</p>
+                    <img src="" alt="img" id="threeimage">
+                    <p class = "threedata">${jsonData.days[2].temp}°C</p>
                     </section>
         
                     <section>
                     <h6>Friday</h6>
-                    <img src="./assets/weatherIcons/clear-day" alt="img" id="fiveimage">
-                    <p>${jsonData.days[4].temp}°C</p>
+                    <img src="" alt="img" id="fourimage">
+                    <p class = "fourdata">${jsonData.days[3].temp}°C</p>
                     </section>
         
                     <section>
                     <h6>Saturday</h6>
-                    <img src="./assets/weatherIcons/clear-day" alt="img" id="siximage">
-                    <p>${jsonData.days[5].temp}°C</p>
+                    <img src="" alt="img" id="fiveimage">
+                    <p class = "fivedata">${jsonData.days[4].temp}°C</p>
                     </section>
         
                     <section>
                     <h6>Sunday</h6>
-                    <img src="./assets/weatherIcons/clear-day" alt="img" id="sevenimage">
-                    <p>${jsonData.days[6].temp}°C</p>
+                    <img src="" alt="img" id="siximage">
+                    <p class = "sixdata">${jsonData.days[5].temp}°C</p>
+                    </section>
+        
+                    <section>
+                    <h6>Monday</h6>
+                    <img src="" alt="img" id="sevenimage">
+                    <p class = "sevendata">${jsonData.days[6].temp}°C</p>
                     </section>
                     `
 
+                document.getElementById("farenheat").addEventListener("click", function () {
+                    this.classList.toggle('active')
+                    document.getElementById("celsius").classList.remove('active')
+                    document.querySelector(".onedata").textContent = `${((jsonData.days[0].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                    document.querySelector(".twodata").textContent = `${((jsonData.days[1].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                    document.querySelector(".threedata").textContent = `${((jsonData.days[2].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                    document.querySelector(".fourdata").textContent = `${((jsonData.days[3].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                    document.querySelector(".fivedata").textContent = `${((jsonData.days[4].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                    document.querySelector(".sixdata").textContent = `${((jsonData.days[5].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                    document.querySelector(".sevendata").textContent = `${((jsonData.days[6].temp * (9 / 5)) + 30).toFixed(1)}°F`
+                })
+
+                document.getElementById("celsius").addEventListener("click", function () {
+                    this.classList.toggle('active');
+                    document.getElementById("farenheat").classList.remove('active')
+                    document.querySelector(".onedata").textContent = `${jsonData.days[0].temp}°C`
+                    document.querySelector(".twodata").textContent = `${jsonData.days[1].temp}°C`
+                    document.querySelector(".threedata").textContent = `${jsonData.days[2].temp}°C`
+                    document.querySelector(".fourdata").textContent = `${jsonData.days[3].temp}°C`
+                    document.querySelector(".fivedata").textContent = `${jsonData.days[4].temp}°C`
+                    document.querySelector(".sixdata").textContent = `${jsonData.days[5].temp}°C`
+                    document.querySelector(".sevendata").textContent = `${jsonData.days[6].temp}°C`
+
+                })
+
+              
                 let weeksrc = ["https://i.ibb.co/PZQXH8V/27.png", "https://i.ibb.co/kBd2NTS/39.png", "https://i.ibb.co/rb4rrJL/26.png", "https://i.ibb.co/1nxNGHL/10.png", "https://i.ibb.co/Kzkk59k/15.png"]
 
                 if (jsonData.days[0].icon === "partly-cloudy-day") {
@@ -289,10 +313,6 @@ function weatherReport() {
                 } else if (jsonData.days[6].icon === "partly-cloudy-night") {
                     document.getElementById("sevenimage").src = weeksrc[4]
                 }
-
-
-                document.getElementById("onetemp").textContent = `${((jsonData.days[0].temp * (9 / 5)) + 30).toFixed(1)}°F`
-
             })
 
 
@@ -300,6 +320,7 @@ function weatherReport() {
 
 
             // Conditions for Changing hour Icons
+            function toChangeHourIcons(){
             let imagesrc = ["https://i.ibb.co/PZQXH8V/27.png", "https://i.ibb.co/kBd2NTS/39.png", "https://i.ibb.co/rb4rrJL/26.png", "https://i.ibb.co/1nxNGHL/10.png", "https://i.ibb.co/Kzkk59k/15.png"]
 
             if (jsonData.days[0].hours[0].icon === "partly-cloudy-day") {
@@ -589,9 +610,11 @@ function weatherReport() {
             } else if (jsonData.days[0].hours[23].icon === "partly-cloudy-night") {
                 document.getElementById("twentythreeImage").src = imagesrc[4]
             }
-
+        }
+        toChangeHourIcons()
         }).catch((error) => {
             alert("Place not found in our Data base")
+            city.value = ""
         })
 }
 

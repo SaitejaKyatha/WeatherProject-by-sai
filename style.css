@@ -109,10 +109,8 @@ margin: 20px;
 */
 
 @media (min-width: 1281px) {
-
-
     #bg-image {
-        background-image: url("./assets/weatherBackImages/partly-cloudy-night");
+        background-image: url("./assets/weatherBackImages/clear-day");
         height: 100%;
         background-repeat: no-repeat;
         background-size: cover;
@@ -120,25 +118,25 @@ margin: 20px;
 
     .weather-report-card {
         display: flex;
-        padding: 40px 20px;
+        padding: 40px;
         justify-content: center;
     }
 
     .search-section {
-        /* width: 350px; */
+        width: 300px;
         background-color: #d2d3d6;
-        padding: 20px;
-        opacity: 90%;
-        border-radius: 10px 0px 0px 10px;
-
+        padding: 30px;
+        opacity: 70%;
+        border-radius: 10px 0 0 10px;
+        display: flex;
+        flex-direction: column;
     }
 
     .report-section {
-
-        /* width: 100%; */
-        padding: 20px 10px;
+        /* width: 800px; */
+        padding: 30px 20px;
         background-color: #f6f6f8;
-        border-radius: 0px 10px 10px 0px;
+        border-radius: 0 10px 10px 0;
     }
 
     .searchBox {
@@ -146,92 +144,167 @@ margin: 20px;
     }
 
     .search-section input {
-        height: 30px;
+        height: 40px;
         margin: 30px 0px 0px 10px;
-        border-width: 0px;
+        border: none;
         border-radius: 5px 0px 0px 5px;
-
+        font-size: 16px;
+        padding: 0px 10px;
     }
 
     .search-section button {
-        height: 30px;
-        width: 30px;
+        height: 40px;
+        width: 40px;
         margin: 30px 0px 0px 0px;
-        border-width: 0px;
+        border: none;
         border-radius: 0px 5px 5px 0px;
         background-color: #5399ed;
         cursor: pointer;
-
     }
 
-    .time-week ul {
+    .weather-icon {
+        display: flex;
+        justify-content: center;
+    }
+
+    .weather-icon img {
+        height: 180px;
+        width: 180px;
+    }
+
+    .temp-date {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .temparture p {
+        font-size: 3rem;
+    }
+
+    .day-time p {
+        font-size: 1.5rem;
+    }
+
+    .line {
+        height: 2px;
+        width: 100%;
+        background-color: white;
+    }
+
+    .cloud {
         display: flex;
         gap: 20px;
     }
 
-    .time-week li {
-        list-style: none;
+    .precp {
+        display: flex;
+        gap: 30px;
     }
 
-    .time-week li a {
-        text-decoration: none;
-        color: black;
+    .locationindex {
+        display: flex;
+        gap: 30px;
+        height: 100%;
+        align-items: end;
     }
 
-    .time-week li+button {
-        margin-left: 650px;
+    .time-week ul {
+        display: flex;
+        gap: 30px;
+    }
+
+    .fcicon {
+        display: flex;
+        width: 100%;
+        justify-content: end;
     }
 
     .time-week button {
-        /* color: white; */
-        border-width: 0px;
+        border: none;
         border-radius: 50px;
-        padding: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
     }
 
-    .time-week button:hover {
-        background-color: black;
+    .fcicon button:hover {
         color: white;
-        border-width: 0px;
+        background-color: black;
+        border: none;
+        border-radius: 50px;
+    }
+
+    .activetw {
+        color: #5399ed;
+    }
+
+    .active {
+        color: white;
+        background-color: black;
+        border: none;
+        border-radius: 50px;
+    }
+
+    .fcicon button:active {
+        color: white;
+        background-color: black;
+        border: none;
         border-radius: 50px;
     }
 
     .grid-style {
-
         display: grid;
-        row-gap: 30px;
-        column-gap: 30px;
-        grid-template-columns: repeat(5, 0fr);
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: repeat(6, 1fr);
         margin: 20px;
     }
 
     .grid-style section {
-        height: 120px;
-        width: 140px;
-        border-radius: 15px;
+        height: 140px;
+        /* width: 140px; */
         padding: 10px;
+        font-weight: bold;
         text-align: center;
+        border-radius: 15px;
         background-color: #ffffff;
-        /* border: 1px solid red; */
         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .grid-style section img {
+        height: 80px;
+        width: 90px;
+        margin: 15px;
     }
 
     .today-highlights {
-
         display: grid;
         row-gap: 20px;
         column-gap: 20px;
-        grid-template-columns: repeat(3, 0fr);
-        margin: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 30px;
     }
 
     .today-highlights section {
-        height: 130px;
-        width: 180px;
+        height: 120px;
+        /* width: 180px; */
         border-radius: 15px;
+        padding: 10px;
         background-color: #ffffff;
-        /* border: 1px solid red; */
         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .sectionheading {
+        color: grey;
+        opacity: 60%;
+        font-size: 18px;
+    }
+
+    .sectionpara {
+        text-align: center;
+        font-size: 1.5rem;
+        margin: 20px;
     }
 }
 
@@ -341,15 +414,12 @@ margin: 20px;
 
     .locationindex {
         display: flex;
+        height: 100%;
         gap: 23px;
-        margin-top: 700px;
+        align-items: end;
+    
     }
 
-    .locationweek {
-        display: flex;
-        gap: 23px;
-        margin-top: 280px;
-    }
 
     .time-week ul {
         display: flex;
@@ -357,10 +427,12 @@ margin: 20px;
     }
 
     .fcicon {
-        margin-left: 500px;
+        display: flex;
+        width: 100%;
+        justify-content: end;
     }
 
-   
+
 
     .time-week button {
         /* color: white; */
@@ -370,26 +442,26 @@ margin: 20px;
         cursor: pointer;
     }
 
-    .fcicon button:hover{
+    .fcicon button:hover {
         color: white;
         background-color: black;
         border-width: 0px;
         border-radius: 50px;
     }
 
-    .activetw{
+    .activetw {
         color: #5399ed;
     }
 
-    .active{
+    .active {
         color: white;
         background-color: black;
         border-width: 0px;
         border-radius: 50px;
     }
-    
 
-    .fcicon button:active{
+
+    .fcicon button:active {
         color: white;
         background-color: black;
         border-width: 0px;
@@ -401,13 +473,13 @@ margin: 20px;
         display: grid;
         row-gap: 20px;
         column-gap: 20px;
-        grid-template-columns: repeat(5, 0fr);
+        grid-template-columns: repeat(5, 1fr);
         margin: 20px;
     }
 
     .grid-style section {
-        height: 100px;
-        width: 100px;
+        /* height: 100px;  */
+        width: 100px; 
         padding: 10px;
         font-weight: bold;
         text-align: center;
@@ -427,7 +499,7 @@ margin: 20px;
         display: grid;
         row-gap: 30px;
         column-gap: 30px;
-        grid-template-columns: repeat(3, 0fr);
+        grid-template-columns: repeat(3, 1fr);
         margin: 20px;
     }
 
@@ -459,240 +531,162 @@ margin: 20px;
   */
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
-
     #bg-image {
-        background-image: url("./assets/weatherBackImages/partly-cloudy-night");
+        background-image: url("./assets/weatherBackImages/clear-day");
         height: 100%;
         background-repeat: no-repeat;
         background-size: cover;
-    }
-
-    .weather-report-card {
-        display: flex;
-        padding: 30px;
-        justify-content: center;
-    }
-
-    .search-section {
-        /* width: 350px; */
-        background-color: #d2d3d6;
-        padding: 10px;
-        opacity: 90%;
-        border-radius: 10px 0px 0px 10px;
-
-    }
-
-    .report-section {
-
-        width: 100%;
-        padding: 20px 10px;
-        background-color: #f6f6f8;
-        border-radius: 0px 10px 10px 0px;
-    }
-
-    .searchBox {
-        display: flex;
-    }
-
-    .search-section input {
-        height: 30px;
-        margin: 30px 0px 0px 10px;
-        border-width: 0px;
-        border-radius: 5px 0px 0px 5px;
-
-    }
-
-    .search-section button {
-        height: 30px;
-        width: 30px;
-        margin: 30px 0px 0px 0px;
-        border-width: 0px;
-        border-radius: 0px 5px 5px 0px;
-        background-color: #5399ed;
-        cursor: pointer;
-
-    }
-
-    .time-week ul {
-        display: flex;
-        gap: 20px;
-    }
-
-    .time-week li {
-        list-style: none;
-        text-decoration: none;
-    }
-
-    .time-week li a {
-
-        text-decoration: none;
-        color: black;
-
-    }
-
-    .time-week li a:active {
-
-        text-decoration: none;
-        color: #5399ed;
-    }
-
-    .time-week li+button {
-        margin-left: 300px;
-    }
-
-    .time-week button {
-        /* color: white; */
-        border-width: 0px;
-        border-radius: 50px;
-        padding: 4px;
-    }
-
-    .time-week button:hover {
-        background-color: black;
-        color: white;
-        border-width: 0px;
-        border-radius: 50px;
-    }
-
-    .grid-style {
-
-        display: grid;
-        row-gap: 10px;
-        column-gap: 10px;
-        grid-template-columns: repeat(4, 1fr);
-        margin: 20px;
-    }
-
-    .grid-style section {
-        height: 100px;
-        width: 80px;
-        padding: 10px;
-        text-align: center;
-        border-radius: 15px;
-        background-color: #ffffff;
-        /* border: 1px solid red; */
-        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    }
-
-    .today-highlights {
-
-        display: grid;
-        row-gap: 20px;
-        column-gap: 20px;
-        grid-template-columns: repeat(2, 0fr);
-        margin: 20px;
-    }
-
-    .today-highlights section {
-        height: 100px;
-        width: 180px;
-        border-radius: 15px;
-        background-color: #ffffff;
-        /* border: 1px solid red; */
-        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    }
-
-}
-
-/* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-
-@media (min-width: 320px) and (max-width: 480px) {
-
-
-    #bg-image {
-        background-image: url("./assets/weatherBackImages/partly-cloudy-night");
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 10px;
     }
 
     .weather-report-card {
         display: flex;
         flex-direction: column;
-        padding: 30px;
-        align-items: center;
+        padding: 20px;
     }
 
     .search-section {
-        /* width: 350px; */
-        width: 100%;
         background-color: #d2d3d6;
-        padding: 10px;
-        opacity: 90%;
+        padding: 20px;
+        opacity: 70%;
         border-radius: 10px 10px 0px 0px;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .report-section {
-
-        width: 100%;
-        padding: 20px 10px;
+        /* width: 100%; */
+        padding: 20px;
         background-color: #f6f6f8;
         border-radius: 0px 0px 10px 10px;
     }
 
     .searchBox {
         display: flex;
+    
     }
 
     .search-section input {
         height: 30px;
-        margin: 30px 0px 0px 10px;
-        border-width: 0px;
+        border: none;
         border-radius: 5px 0px 0px 5px;
-
     }
 
     .search-section button {
         height: 30px;
         width: 30px;
-        margin: 30px 0px 0px 0px;
-        border-width: 0px;
+        border: none;
         border-radius: 0px 5px 5px 0px;
         background-color: #5399ed;
         cursor: pointer;
+    }
 
+    .weather-icon {
+        display: flex;
+        justify-content: center;
+    }
+
+    .weather-icon img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .temp-date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .temparture p {
+        font-size: x-large;
+    }
+
+    .day-time p {
+        font-size: large;
+    }
+
+    .line {
+        height: 2px;
+        width: 100%;
+        background-color: white;
+    }
+
+    .cloud,
+    .precp,
+    .locationindex {
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
 
     .time-week ul {
         display: flex;
-        gap: 20px;
+        justify-content: space-between;
+        gap: 10px;
     }
 
-    .time-week li {
-        list-style: none;
-    }
-
-    .time-week li a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .time-week li+button {
-        margin-left: 150px;
+    .fcicon {
+        margin-left: auto;
     }
 
     .time-week button {
-        /* color: white; */
-        border-width: 0px;
+        border: none;
         border-radius: 50px;
-        padding: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
     }
 
-    .time-week button:hover {
-        background-color: black;
+    .fcicon button:hover {
         color: white;
-        border-width: 0px;
+        background-color: black;
+        border: none;
+        border-radius: 50px;
+    }
+
+    .activetw {
+        color: #5399ed;
+    }
+
+    .active {
+        color: white;
+        background-color: black;
+        border: none;
+        border-radius: 50px;
+    }
+
+    .fcicon button:active {
+        color: white;
+        background-color: black;
+        border: none;
         border-radius: 50px;
     }
 
     .grid-style {
+        display: grid;
+        row-gap: 15px;
+        column-gap: 15px;
+        grid-template-columns: repeat(5, 1fr);
+        margin: 20px;
+    }
 
+    .grid-style section {
+        /* height: 80px; */
+        /* width: 80px; */
+        padding: 15px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 15px;
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .grid-style section img {
+        height: 40px;
+        width: 40px;
+        margin: 5px;
+    }
+
+    .today-highlights {
         display: grid;
         row-gap: 20px;
         column-gap: 20px;
@@ -700,31 +694,219 @@ margin: 20px;
         margin: 20px;
     }
 
-    .grid-style section {
-        height: 100px;
-        width: 70px;
+    .today-highlights section {
+        /* height: 90px; */
+        /* width: 150px; */
         border-radius: 15px;
         padding: 10px;
-        text-align: center;
         background-color: #ffffff;
         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .sectionheading {
+        color: grey;
+        opacity: 60%;
+    }
+
+    .sectionpara {
+        text-align: center;
+        font-size: large;
+        margin: 15px;
+    }
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+@media (min-width: 320px) and (max-width: 767px) {
+    #bg-image {
+        background-image: url("./assets/weatherBackImages/clear-day");
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .weather-report-card {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .search-section {
+        /* width: 100%; */
+        background-color: #d2d3d6;
+        padding: 10px;
+        opacity: 70%;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .report-section {
+        /* width: 100%; */
+        padding: 10px;
+        background-color: #f6f6f8;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .searchBox {
+        display: flex;
+        /* width: 100%; */
+    }
+
+    .search-section input {
+        flex-grow: 1;
+        height: 30px;
+        width: 180px;
+        margin: 0;
+        border-width: 0;
+        border-radius: 5px 0px 0px 5px;
+    }
+
+    .search-section button {
+        height: 30px;
+        width: 30px;
+        margin: 0;
+        border-width: 0;
+        border-radius: 0 5px 5px 0;
+        background-color: #5399ed;
+        cursor: pointer;
+    }
+
+    .weather-icon {
+        display: flex;
+        justify-content: center;
+    }
+
+    .weather-icon img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .temp-date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .temparture p {
+        font-size: large;
+    }
+
+    .day-time p {
+        font-size: small;
+    }
+
+    .line {
+        height: 1px;
+        width: 100%;
+        background-color: white;
+    }
+
+    .cloud,
+    .precp,
+    .locationindex {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .time-week ul {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .fcicon {
+        margin-left: 0;
+    }
+
+    .time-week button {
+        border-width: 0;
+        border-radius: 50px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .fcicon button:hover {
+        color: white;
+        background-color: black;
+        border-width: 0;
+        border-radius: 50px;
+    }
+
+    .activetw {
+        color: #5399ed;
+    }
+
+    .active {
+        color: white;
+        background-color: black;
+        border-width: 0;
+        border-radius: 50px;
+    }
+
+    .fcicon button:active {
+        color: white;
+        background-color: black;
+        border-width: 0;
+        border-radius: 50px;
+    }
+
+    .grid-style {
+        display: grid;
+        row-gap: 10px;
+        column-gap: 10px;
+        padding: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-auto-flow: row; */
+    }
+
+    .grid-style section {
+        height: 80px;
+        /* width: 70px; */
+        padding: 5px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .grid-style section img {
+        height: 30px;
+        width: 30px;
+        margin: 8px;
     }
 
     .today-highlights {
-
         display: grid;
-        row-gap: 20px;
-        column-gap: 20px;
+        row-gap: 10px; 
+        column-gap: 10px; 
         grid-template-columns: repeat(2, 1fr);
-        margin: 20px;
+        /* margin: 10px; */
     }
 
     .today-highlights section {
-        height: 100px;
-        width: 120px;
-        border-radius: 15px;
+        /* height: 70px; */
+        /* width: 100px; */
+        border-radius: 10px;
+        padding: 10px;
         background-color: #ffffff;
         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     }
 
+    .sectionheading {
+        color: grey;
+        opacity: 60%;
+        font-size: 8px;
+    }
+
+    .sectionpara {
+        text-align: center;
+        font-size: medium;
+        margin: 15px;
+    }
 }
