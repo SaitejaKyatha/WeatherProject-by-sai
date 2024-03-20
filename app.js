@@ -1,4 +1,4 @@
-
+// Function for Get Time & Day Name
 function updateTime() {
     let today = new Date();
     let dayOfWeek = today.getDay();
@@ -14,7 +14,7 @@ function updateTime() {
 }
 updateTime()
 setInterval(updateTime, 1000);
-
+// Function to get weather Data depending on place name
 function weatherReport() {
     var city = document.getElementById("input-feild").value
     fetch(
@@ -66,7 +66,7 @@ function weatherReport() {
             document.getElementById("twentytwo").textContent = `${data.hours[22].temp}°C`
             document.getElementById("twentythree").textContent = `${data.hours[23].temp}°C`
 
-            // Data for celsius
+//  Function for celsius temperature
             function toCelsius(data) {
                 document.getElementById("temperature").textContent = `${jsonData.currentConditions.temp}°C`
                 document.getElementById("zero").textContent = `${data.hours[0].temp}°C`
@@ -94,7 +94,7 @@ function weatherReport() {
                 document.getElementById("twentytwo").textContent = `${data.hours[22].temp}°C`
                 document.getElementById("twentythree").textContent = `${data.hours[23].temp}°C`
             }
-            // Data for farenheat
+// function  for farenheat temperature
             function toFarnheat(data) {
                 document.getElementById("temperature").textContent = `${((jsonData.currentConditions.temp * (9 / 5)) + 30).toFixed(1)}°F`
                 document.getElementById("zero").textContent = `${((data.hours[0].temp * (9 / 5)) + 30).toFixed(1)}°F`
@@ -122,86 +122,89 @@ function weatherReport() {
                 document.getElementById("twentytwo").textContent = `${((data.hours[22].temp * (9 / 5)) + 30).toFixed(1)}°F`
                 document.getElementById("twentythree").textContent = `${((data.hours[23].temp * (9 / 5)) + 30).toFixed(1)}°F`
             }
-
-            // To change celsius
+ // To change F.heat to Celsius
             document.getElementById("celsius").addEventListener("click", function () {
                 toCelsius(data);
                 this.classList.toggle('active');
                 document.getElementById("farenheat").classList.remove('active')
             })
-            // To change farenheat
+// To change Celsius to F.heat 
             document.getElementById("farenheat").addEventListener("click", function () {
                 toFarnheat(data);
                 this.classList.toggle('active')
                 document.getElementById("celsius").classList.remove('active')
             })
-            // To get today related information
+// To get today related information
             document.getElementById("todaydata").addEventListener("click", function () {
                 this.classList.toggle('activetw')
                 document.getElementById("weekdata").classList.remove('activetw')
                 document.getElementById("weekforecast").style.display = "none"
                 document.getElementById("todayforecast").style.display =""
-
             })
-
-            // To get week related information
+// To get week related information
             document.getElementById("weekdata").addEventListener("click", function () {
                 this.classList.toggle('activetw');
                 document.getElementById("todaydata").classList.remove('activetw')
                 console.log("weekhello");
-
             })
-
-            
-
+// To get week data & DayName
+            let today = new Date()
+            let daynames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            let getdaynames = []
+            for(let i = 0; i < 7; i++){
+                let day = new Date(today.getTime() + i * 24 * 60 * 60 * 1000);
+                let weekname = daynames[day.getDay()]
+                getdaynames.push(weekname)
+            }
+// Dynamically created week data
             document.getElementById("weekdata").addEventListener("click", function () {
                 document.getElementById("todayforecast").style.display = "none"
                 document.getElementById("weekforecast").style.display = ""
                 document.getElementById("weekforecast").innerHTML =
                     `
                     <section>
-                    <h6>Tuesday</h6>
+                    <h6>${getdaynames[0]}</h6>
                     <img src="" alt="img" id="oneimage">
                     <p class = "onedata">${jsonData.days[0].temp}°C</p>
                     </section>
         
                     <section>
-                    <h6>Wednesday</h6>
+                    <h6>${getdaynames[1]}</h6>
                     <img src=".." alt="img" id="twoimage">
                     <p class = "twodata">${jsonData.days[1].temp}°C</p>
                     </section>
         
                     <section>
-                    <h6>Thursday</h6>
+                    <h6>${getdaynames[2]}</h6>
                     <img src="" alt="img" id="threeimage">
                     <p class = "threedata">${jsonData.days[2].temp}°C</p>
                     </section>
         
                     <section>
-                    <h6>Friday</h6>
+                    <h6>${getdaynames[3]}</h6>
                     <img src="" alt="img" id="fourimage">
                     <p class = "fourdata">${jsonData.days[3].temp}°C</p>
                     </section>
         
                     <section>
-                    <h6>Saturday</h6>
+                    <h6>${getdaynames[4]}</h6>
                     <img src="" alt="img" id="fiveimage">
                     <p class = "fivedata">${jsonData.days[4].temp}°C</p>
                     </section>
         
                     <section>
-                    <h6>Sunday</h6>
+                    <h6>${getdaynames[5]}</h6>
                     <img src="" alt="img" id="siximage">
                     <p class = "sixdata">${jsonData.days[5].temp}°C</p>
                     </section>
         
                     <section>
-                    <h6>Monday</h6>
+                    <h6>${getdaynames[6]}</h6>
                     <img src="" alt="img" id="sevenimage">
                     <p class = "sevendata">${jsonData.days[6].temp}°C</p>
                     </section>
                     `
-
+// changing Celisus to f.Heat in week Data
                 document.getElementById("farenheat").addEventListener("click", function () {
                     this.classList.toggle('active')
                     document.getElementById("celsius").classList.remove('active')
@@ -213,7 +216,7 @@ function weatherReport() {
                     document.querySelector(".sixdata").textContent = `${((jsonData.days[5].temp * (9 / 5)) + 30).toFixed(1)}°F`
                     document.querySelector(".sevendata").textContent = `${((jsonData.days[6].temp * (9 / 5)) + 30).toFixed(1)}°F`
                 })
-
+// changing F.heat to celsius in week Data
                 document.getElementById("celsius").addEventListener("click", function () {
                     this.classList.toggle('active');
                     document.getElementById("farenheat").classList.remove('active')
@@ -226,8 +229,7 @@ function weatherReport() {
                     document.querySelector(".sevendata").textContent = `${jsonData.days[6].temp}°C`
 
                 })
-
-              
+// Changing image icons accring to day in Week data  
                 let weeksrc = ["https://i.ibb.co/PZQXH8V/27.png", "https://i.ibb.co/kBd2NTS/39.png", "https://i.ibb.co/rb4rrJL/26.png", "https://i.ibb.co/1nxNGHL/10.png", "https://i.ibb.co/Kzkk59k/15.png"]
 
                 if (jsonData.days[0].icon === "partly-cloudy-day") {
@@ -314,12 +316,7 @@ function weatherReport() {
                     document.getElementById("sevenimage").src = weeksrc[4]
                 }
             })
-
-
-
-
-
-            // Conditions for Changing hour Icons
+// Conditions for Changing hour Icons in today data
             function toChangeHourIcons(){
             let imagesrc = ["https://i.ibb.co/PZQXH8V/27.png", "https://i.ibb.co/kBd2NTS/39.png", "https://i.ibb.co/rb4rrJL/26.png", "https://i.ibb.co/1nxNGHL/10.png", "https://i.ibb.co/Kzkk59k/15.png"]
 
@@ -617,8 +614,6 @@ function weatherReport() {
             city.value = ""
         })
 }
-
-
 // Function to check uv-index
 function toCheckUvindex(uvindex) {
     if (uvindex === 1 || uvindex === 2) {
