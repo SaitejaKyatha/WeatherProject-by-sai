@@ -610,8 +610,8 @@ function weatherReport() {
         }
         toChangeHourIcons()
         }).catch((error) => {
-            alert("Place not found in our Data base")
-            city.value = ""
+            alert("Place not found in our Data")
+           
         })
 }
 // Function to check uv-index
